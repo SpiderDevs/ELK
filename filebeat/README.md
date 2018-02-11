@@ -1,23 +1,10 @@
-# Welcome to filebeat 6.2.1
+https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-installation.html 
 
-Filebeat sends log files to Logstash or directly to Elasticsearch.
+https://hub.docker.com/r/prima/filebeat/
 
-## Getting Started
+Run
+docker run -v /path/to/filebeat.yml:/filebeat.yml docker.elastic.co/beats/filebeat:6.2.1
+Or, you can create your own derived image, with the configuration in the image itself.
 
-To get started with filebeat, you need to set up Elasticsearch on your localhost first. After that, start filebeat with:
-
-     ./filebeat -c filebeat.yml -e
-
-This will start the beat and send the data to your Elasticsearch instance. To load the dashboards for filebeat into Kibana, run:
-
-    ./filebeat setup -e
-
-For further steps visit the [Getting started](https://www.elastic.co/guide/en/beats/filebeat/6.2/filebeat-getting-started.html) guide.
-
-## Documentation
-
-Visit [Elastic.co Docs](https://www.elastic.co/guide/en/beats/filebeat/6.2/index.html) for the full filebeat documentation.
-
-## Release notes
-
-https://www.elastic.co/guide/en/beats/libbeat/6.2/release-notes-6.2.1.html
+FROM prima/filebeat
+COPY my-config/filebeat.yml /filebeat.yml

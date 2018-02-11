@@ -3,7 +3,7 @@ filebeat.prospectors:
 - type: log
   enabled: true
   paths:
-    - /var/lib/docker/volumes/logs-volume/_data/*
+    - /app/Logs/*
   
 #============================= Filebeat modules ===============================
 

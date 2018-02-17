@@ -18,4 +18,4 @@ setup.template.settings:
 
 #----------------------------- Logstash output --------------------------------
 output.logstash:
-  hosts: ["localhost:5044"]
+  hosts: ["elk_logstash_1:5044"]

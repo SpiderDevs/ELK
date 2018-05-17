@@ -51,7 +51,7 @@ services:
       context: filebeat/
     volumes:
       - logs-volume:/app/Logs
-      - /filebeat.yml:/filebeat.yml
+      - filebeat.yml:/filebeat.yml
     networks:
       - elk
     depends_on:

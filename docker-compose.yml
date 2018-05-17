@@ -60,3 +60,5 @@ services:
 networks:
   elk:
     driver: bridge
+volumes:
+  logs-volume:

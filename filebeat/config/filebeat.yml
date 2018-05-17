@@ -1,0 +1,21 @@
+#=========================== Filebeat prospectors =============================
+filebeat.prospectors:
+- type: log
+  enabled: true
+  paths:
+    - /app/Logs/*
+  
+#============================= Filebeat modules ===============================
+
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+  
+#==================== Elasticsearch template setting ==========================
+
+setup.template.settings:
+  index.number_of_shards: 3
+
+#----------------------------- Logstash output --------------------------------
+output.logstash:
+  hosts: ["elk_logstash_1:5044"]

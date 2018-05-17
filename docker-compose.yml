@@ -46,6 +46,16 @@ services:
     depends_on:
       - elasticsearch
     restart: on-failure
+  filebeat:
+    build:
+      context: filebeat/
+    volumes:
+      - ./filebeat/config/:/usr/share/filebeat/
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+    restart: on-failure
 
 networks:
 

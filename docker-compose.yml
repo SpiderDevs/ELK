@@ -56,6 +56,10 @@ services:
     depends_on:
       - elasticsearch
     restart: on-failure
+    environment:
+     - LOGSTASH_HOST=logstash
+     - LOGSTASH_PORT=5044
+     - SHIPPER_NAME=spider
 
 networks:
   elk:

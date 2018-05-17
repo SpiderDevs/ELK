@@ -18,4 +18,4 @@ setup.template.settings:
 
 #----------------------------- Logstash output --------------------------------
 output.logstash:
-  hosts: ["logstash_1:5044"]
+  hosts: ["logstash:5044"]
